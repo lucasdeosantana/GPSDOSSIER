@@ -7,7 +7,6 @@ const handle = async (req:NextApiRequestWithUser<any>, res:NextApiResponse) => {
     try{
         const db =  (await database).collection('activities')
         const { id } = req.user
-        console.log(id)
         const activities =  (await db.find({"users":{$elemMatch:{user:id}}}).toArray())
         res.json(activities)
     }catch{
