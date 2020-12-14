@@ -11,7 +11,7 @@ interface IActivityCreate{
     orderNumber:number
     date:number
     users:string[]
-    skills:[[string,number]]
+    skills:[{string:number}]
 }
 
 const handle = async (req:NextApiRequestWithUser<IActivityCreate>, res:NextApiResponse) => {
