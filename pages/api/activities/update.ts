@@ -23,7 +23,8 @@ const handle = async (req:NextApiRequestWithUser<IActivitiesUpdate>, res:NextApi
             {$set:{"orderType":orderType}},
             {$set:{"orderNumber":orderNumber}},
             {$set:{"date":date}},
-            {$set:{"users":skills}},
+            {$set:{"users":users}},
+            {$set:{"skills":skills}},
         ])
         res.statusCode=200
         res.json({

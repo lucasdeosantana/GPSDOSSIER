@@ -24,9 +24,10 @@ export default async (req:NextApiRequest, res:NextApiResponse) => {
         id:user._id,
         name:user.firstName,
         iat: Math.round(Date.now() / 1000), 
-        exp: Math.round(Date.now() / 1000 + 2 * 60 * 60) 
+        exp: Math.round(Date.now() / 1000 + 10) 
     }
     var token = jwt.encode(payload, process.env.SECRET)
+    console.log(token)
     res.statusCode = 200
     res.send(token)
 }
